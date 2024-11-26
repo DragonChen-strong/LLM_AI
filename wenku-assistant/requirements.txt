@@ -1,0 +1,10 @@
+requests
+fpdf
+python-docx
+openpyxl
+flask
+python-dotenv
+re
+json
+time
+os

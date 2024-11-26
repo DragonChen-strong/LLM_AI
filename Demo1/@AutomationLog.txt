@@ -1,0 +1,3 @@
+2024-10-28 16:15:51.279 Demo2.py[42] <module> -> Find Control Timeout(10s): {Name: '账号', ControlType: EditControl}
+2024-10-28 16:22:31.404 pydevd_repr_utils.py[175] repr_instance -> Find Control Timeout(10s): {Name: 'QQ', ControlType: WindowControl}
+2024-10-28 16:22:42.314 pydevd_repr_utils.py[222] get_value_repr -> 

@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  llm-fastapi:
+    container_name: llm-fastapi-container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "7502:7502"  # 映射宿主机和容器的端口
+    environment:
+      - FLASK_ENV=production
+      - WEATHER_API_URL=https://wis.qq.com/weather/common
+      - WEATHER_API_SOURCE=pc
+      - WEATHER_API_TYPE=observe
+      - LLM_URL=http://192.168.110.175:11434/api/generate
+      - LLM_MODEL=qwen2.5:32b
+      - API_PORT=7502
+    volumes:
+      - ./document:/app/document  # 挂载 `document` 文件夹到容器中
+      - ./logs:/app/logs          # （可选）挂载日志目录
+    restart: unless-stopped

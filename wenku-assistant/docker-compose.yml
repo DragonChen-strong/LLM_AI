@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  llm_service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wenku_assistant_service
+    env_file:
+      - .env   #加载.env文件
+    volumes:
+      - ./document:/app/document  # 将文档输出文件夹挂载到主机
+      - ./word/SimSun.ttf:/app/word/SimSun.ttf  # 将 SimSun.ttf 字体文件挂载到容器中
+    environment:
+      - LANG=C.UTF-8  # 设置 UTF-8 编码支持
+    ports:
+      - "${FLASK_RUN_PORT}:${FLASK_RUN_PORT}"  # 暴露端口（如有需要）
+    command: ["conda", "run", "-n", "flask_env", "python", "app.py"]

@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+requests
+spacy
+zh_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/zh_core_web_sm-3.4.1/zh_core_web_sm-3.4.1.tar.gz
+python-dotenv
+langchain

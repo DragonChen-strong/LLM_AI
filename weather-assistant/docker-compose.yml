@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  weather_demo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: weather_demo_app
+    ports:
+      - "5011:5011"  # 本地端口5011映射到容器端口5011
+    env_file:
+      - .env  # 使用 .env 文件设置环境变量
+    volumes:
+      - .:/app  # 将当前目录挂载到容器中的 /app 目录，便于开发调试
+    restart: unless-stopped
+    environment:
+      FLASK_ENV: "production"  # 直接指定环境变量（优先级高于 .env）
