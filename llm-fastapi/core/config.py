@@ -26,4 +26,10 @@ class Config:
     DB_PASSWORD =os.getenv("DB_PASSWORD","root@JDkj!123")
     DB_NAME = os.getenv("DB_NAME","jdkj_bean_ai")
 
+    #workstream 配置
+    SERVER_ADDRESS=os.getenv("SERVER_ADDRESS","127.0.0.1:8188")
+    WORK_STREAM = os.getenv("WORK_STREAM", "D:\work\python3.9\llm-fastapi\workstream\workflow_api.json")
+
+
+
 config = Config()

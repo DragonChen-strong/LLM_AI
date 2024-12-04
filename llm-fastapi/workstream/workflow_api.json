@@ -1,0 +1,109 @@
+{
+  "3": {
+    "inputs": {
+      "seed": 913845399541664,
+      "steps": 30,
+      "cfg": 8,
+      "sampler_name": "ddim",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "14",
+        0
+      ],
+      "positive": [
+        "15",
+        0
+      ],
+      "negative": [
+        "16",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "K采样器"
+    }
+  },
+  "5": {
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "空Latent"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "14",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "9": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "保存图像"
+    }
+  },
+  "14": {
+    "inputs": {
+      "ckpt_name": "古风_都市推文小说_V1.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Checkpoint加载器(简易)"
+    }
+  },
+  "15": {
+    "inputs": {
+      "text": "cute kitten, small furry cat, playful kitten, soft fur, adorable, whiskers, bright eyes, fluffy tail, curious, happy kitten, sitting kitten, playful pose, warm lighting, pastel colors, close-up, photorealistic, soft texture, cat in natural setting, cozy environment, gentle expression, kitten with toy, calm atmosphere\n",
+      "seed": 868209657380871,
+      "clip": [
+        "14",
+        1
+      ]
+    },
+    "class_type": "SixGodPrompts",
+    "_meta": {
+      "title": "SixGodPrompts"
+    }
+  },
+  "16": {
+    "inputs": {
+      "text": "aggressive cat, adult cat, dark colors, harsh lighting, unrealistic, angry expression, blurry, messy fur, distorted, unnatural pose, overly abstract, no fur, no whiskers, sad kitten, rough textures, cat in a cage, cluttered background, chaotic scene\n",
+      "seed": 878686753154771,
+      "clip": [
+        "14",
+        1
+      ]
+    },
+    "class_type": "SixGodPrompts",
+    "_meta": {
+      "title": "SixGodPrompts"
+    }
+  }
+}

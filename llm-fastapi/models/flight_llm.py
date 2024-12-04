@@ -176,6 +176,3 @@ class AssistantTools:
         return res.content
 
 
-AssistantTools=AssistantTools()
-res=AssistantTools.call_with_assistant("2024年12月1日航班信息")
-print(res)
